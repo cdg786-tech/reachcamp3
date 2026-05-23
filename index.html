@@ -66,11 +66,23 @@
     .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: flex-start; }
     
     .hero-left { display: flex; flex-direction: column; }
-    .hero-label { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--mid-gray); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+    
+    /* STACKED JUSTIFIED BRAND ARCHITECTURE BLOCK */
+    .hero-brand-stack { display: flex; flex-direction: column; width: fit-content; margin-bottom: 3.5rem; }
+    .hero-logo-display { font-weight: 700; font-size: 4.5rem; color: #fff; letter-spacing: 0.08em; line-height: 1; display: inline-flex; align-items: center; margin-bottom: 1rem; }
+    .hero-logo-display span.tri { display: inline-flex; gap: 6px; margin-left: 12px; }
+    .hero-logo-display span.tri i { display: inline-block; width: 8px; height: 42px; border-radius: 2px; }
+    .hero-logo-display span.tri i:nth-child(1) { background: var(--red); }
+    .hero-logo-display span.tri i:nth-child(2) { background: var(--blue); }
+    .hero-logo-display span.tri i:nth-child(3) { background: var(--gold); }
+    
+    .hero-label-row { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--mid-gray); letter-spacing: 0.15em; text-transform: uppercase; display: flex; justify-content: space-between; width: 100%; line-height: 1.8; }
+    .hero-label-row span { display: inline-block; }
+    
     .hero h1 { font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; color: #fff; }
     .hero h1 em { font-family: 'Libre Baskerville', serif; font-style: italic; font-weight: 400; color: var(--light-gray); }
     
-    .hero-right { padding-top: 3.5rem; }
+    .hero-right { padding-top: 10.5rem; } /* Adjusted to align with the start of the main slogan statement */
     .hero-sub { font-size: 1.15rem; line-height: 1.7; margin-bottom: 3rem; color: rgba(255, 255, 255, 0.7); }
     .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
     
@@ -152,6 +164,8 @@
       .hero-right { padding-top: 0; }
       .nav-logo { font-size: 2rem; }
       .nav-logo span.tri i { height: 18px; }
+      .hero-brand-stack { width: 100%; }
+      .hero-label-row { flex-direction: column; letter-spacing: 0.05em; }
     }
   </style>
 </head>
@@ -173,7 +187,20 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
-          <div class="hero-label">Integrated Process, Performance & Operations Intelligence</div>
+          
+          <div class="hero-brand-stack">
+            <div class="hero-logo-display">CAMP3 <span class="tri"><i></i><i></i><i></i></span></div>
+            <div class="hero-label-row">
+              <span>I n t e g r a t e d &nbsp; P r o c e s s ,</span>
+            </div>
+            <div class="hero-label-row">
+              <span>P e r f o r m a n c e &nbsp; &amp;</span>
+            </div>
+            <div class="hero-label-row">
+              <span>O p e r a t i o n s &nbsp; I n t e l l i g e n c e</span>
+            </div>
+          </div>
+
           <h1>Your instincts<br>got you here.<br><em>We add the data.</em></h1>
         </div>
         <div class="hero-right">
