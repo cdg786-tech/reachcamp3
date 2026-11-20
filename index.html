@@ -3,151 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAMP3 | Fractional Revenue Operations for Independent Architecture Practices</title>
-  
+  <title>CAMP3 | Fractional Revenue Operations &amp; Process Innovation</title>
+  <meta name="description" content="CAMP3: fractional revenue operations and process innovation for architecture and design practices.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141414'/%3E%3Crect x='8' y='8' width='4' height='16' fill='%23DC2626'/%3E%3Crect x='14' y='8' width='4' height='16' fill='%232B4C9B'/%3E%3Crect x='20' y='8' width='4' height='16' fill='%23E8B817'/%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --black: #141414;
-      --charcoal: #1E1E1E;
-      --warm-white: #F8F6F1;
-      --off-white: #EDEBE6;
-      --mid-gray: #888;
-      --light-gray: #C4C2BD;
+      --bg: #0E0E0E;
+      --panel: #161616;
+      --line: rgba(255,255,255,0.08);
+      --text: #FFFFFF;
+      --muted: rgba(255,255,255,0.55);
+      --dim: rgba(255,255,255,0.3);
       --red: #DC2626;
       --blue: #2B4C9B;
       --gold: #E8B817;
-      --green: #2D8A5E;
-      
-      /* Fluid vertical spacing engine */
-      --section-pad: clamp(4.5rem, 7vw, 7.5rem);
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html, body { background: var(--bg); }
     body {
       font-family: 'Instrument Sans', sans-serif;
-      color: var(--black);
-      background: var(--warm-white);
+      color: var(--text);
       -webkit-font-smoothing: antialiased;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 1.25rem; width: 100%; }
 
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+    /* NAV */
+    nav { border-bottom: 1px solid var(--line); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { font-weight: 700; font-size: 1.5rem; color: var(--text); letter-spacing: 0.08em; text-decoration: none; display: inline-flex; align-items: center; }
+    .tri { display: inline-flex; gap: 4px; margin-left: 8px; }
+    .tri i { display: inline-block; width: 4px; height: 16px; border-radius: 1px; }
+    .tri i:nth-child(1) { background: var(--red); }
+    .tri i:nth-child(2) { background: var(--blue); }
+    .tri i:nth-child(3) { background: var(--gold); }
+    .nav-cta { border: 1px solid rgba(255,255,255,0.25); color: var(--text); padding: 0.45rem 1rem; border-radius: 4px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--text); color: var(--bg); }
 
-    /* NAVIGATION */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(20,20,20,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    nav .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    
-    .nav-logo { font-weight: 700; font-size: 2rem; color: #fff; letter-spacing: 0.08em; text-decoration: none; display: inline-flex; align-items: center; }
-    .nav-logo span.tri { display: inline-flex; gap: 4px; margin-left: 8px; }
-    .nav-logo span.tri i { display: inline-block; width: 4px; height: 18px; border-radius: 1px; }
-    .nav-logo span.tri i:nth-child(1) { background: var(--red); }
-    .nav-logo span.tri i:nth-child(2) { background: var(--blue); }
-    .nav-logo span.tri i:nth-child(3) { background: var(--gold); }
-    
-    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a { color: var(--light-gray); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s ease; }
-    .nav-links a:hover { color: #fff; }
-    .nav-cta { background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #fff !important; padding: 0.45rem 1rem; border-radius: 4px; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.05em; transition: all 0.2s ease; }
-    .nav-cta:hover { background: #fff; color: var(--black) !important; border-color: #fff; }
+    /* MAIN */
+    main { flex: 1; display: flex; align-items: center; padding: clamp(3rem, 8vw, 5rem) 0; }
+    .label { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--dim); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem; }
+    h1 { font-size: clamp(2.1rem, 5.5vw, 3.6rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
+    h1 span { color: var(--muted); font-weight: 500; }
 
-    /* HERO LAYOUT */
-    .hero { background: var(--charcoal); padding-top: 140px; padding-bottom: var(--section-pad); color: #fff; display: flex; align-items: center; }
-    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
-    
-    .hero-left { display: flex; flex-direction: column; }
-    .hero-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--mid-gray); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .hero h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: #fff; }
-    
-    .hero-sub { font-size: clamp(1.05rem, 1.8vw, 1.15rem); line-height: 1.75; margin-bottom: 2.5rem; color: rgba(255, 255, 255, 0.65); font-weight: 400; }
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-    
-    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; text-decoration: none; transition: all 0.2s ease; }
-    .btn--primary { background: #fff; color: var(--black); }
-    .btn--primary:hover { background: var(--off-white); }
-    .btn--outline { border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); }
-    .btn--outline:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.5); color: #fff; }
+    .cards { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+    .card { background: var(--panel); padding: 1.5rem 1.5rem 1.6rem; position: relative; }
+    .card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+    .card:nth-child(1)::before { background: var(--red); }
+    .card:nth-child(2)::before { background: var(--blue); }
+    .card-num { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--dim); letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .card h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.25rem; letter-spacing: -0.01em; }
+    .card p { font-size: 0.93rem; color: var(--muted); }
 
-    /* SPLIT VALUE PROP */
-    .intro { padding: var(--section-pad) 0; background: var(--warm-white); border-bottom: 1px solid var(--off-white); }
-    .intro-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
-    .intro-lead { font-family: 'Libre Baskerville', serif; font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.6; color: var(--black); font-weight: 400; }
-    .intro-lead em { font-style: italic; color: var(--black); border-bottom: 2px solid var(--black); }
-    .intro-body { font-size: 1.02rem; line-height: 1.8; color: #4A4A4A; }
-    .intro-body p + p { margin-top: 1.25rem; }
+    /* FOOTER */
+    footer { position: relative; overflow: hidden; }
+    .stripe { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 4px; }
+    .stripe i:nth-child(1) { background: var(--red); }
+    .stripe i:nth-child(2) { background: var(--blue); }
+    .stripe i:nth-child(3) { background: var(--gold); }
+    .foot { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; align-items: center; justify-content: space-between; padding: 1.5rem 1.25rem; font-family: 'DM Mono', monospace; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); }
 
-    /* CORE FOCUS AREAS */
-    .legs { padding: var(--section-pad) 0; background: var(--off-white); }
-    .legs-header { margin-bottom: 3.5rem; }
-    .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--mid-gray); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem; }
-    .section-title { font-size: clamp(1.8rem, 3vw, 2.2rem); font-weight: 600; color: var(--black); letter-spacing: -0.01em; }
-    
-    .legs-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-    .leg-block { background: #fff; border: 1px solid rgba(0,0,0,0.04); padding: 2.5rem 2rem; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; }
-    .leg-meta { display: flex; justify-content: space-between; font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--mid-gray); margin-bottom: 2rem; }
-    .leg-title { font-size: 1.45rem; font-weight: 600; line-height: 1.3; margin-bottom: 1rem; letter-spacing: -0.01em; color: var(--black); }
-    .leg-desc { font-size: 0.95rem; line-height: 1.7; color: #555; margin-bottom: 2rem; }
-    .leg-definition { font-family: 'Instrument Sans', sans-serif; font-style: italic; font-size: 0.85rem; color: var(--mid-gray); line-height: 1.5; padding-top: 1.25rem; border-top: 1px solid rgba(0,0,0,0.05); }
-
-    /* TIMELINE SECTION */
-    .process { padding: var(--section-pad) 0; background: var(--charcoal); color: #fff; }
-    .process-guarantee { font-family: 'Libre Baskerville', serif; font-style: italic; color: rgba(255,255,255,0.4); margin: 0.5rem 0 3.5rem; font-size: 1rem; }
-    .process-steps { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
-    .step-num { font-size: 1.75rem; font-weight: 400; color: rgba(255,255,255,0.15); margin-bottom: 0.5rem; font-family: 'Libre Baskerville', serif; }
-    .step-week { color: var(--light-gray); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; text-transform: uppercase; }
-    .step h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: #fff; letter-spacing: -0.01em; }
-    .step p { font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.6); }
-
-    /* BOUNDARIES OF ENGAGEMENT */
-    .scope { padding: var(--section-pad) 0; background: var(--warm-white); }
-    .scope-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
-    .scope-col h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--black); letter-spacing: -0.01em; }
-    .scope-list { list-style: none; }
-    .scope-list li { font-size: 0.92rem; padding: 0.9rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); color: #444; line-height: 1.5; }
-
-    /* PRACTICE SECTORS */
-    .sectors { padding: var(--section-pad) 0; background: var(--off-white); }
-    .sector-tabs { display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
-    .sector-tab { padding: 0.75rem 0; font-size: 0.85rem; font-weight: 600; color: var(--black); border: none; background: none; relative; letter-spacing: 0.05em; text-transform: uppercase; }
-    .sector-friction { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 1.1rem; color: #333; margin-bottom: 3.5rem; line-height: 1.6; }
-    
-    .quarter-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-    .quarter-card { background: #fff; padding: 2.5rem 2rem; border-radius: 4px; border: 1px solid rgba(0,0,0,0.04); }
-    .quarter-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.75rem; color: var(--black); }
-    .quarter-card h4 span { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--mid-gray); display: block; margin-bottom: 0.25rem; letter-spacing: 0.08em; }
-    .quarter-item { margin-bottom: 1.5rem; }
-    .quarter-item:last-child { margin-bottom: 0; }
-    .quarter-item h5 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--black); }
-    .quarter-item p { font-size: 0.85rem; line-height: 1.65; color: #666; }
-
-    /* CLOSING INTERFACE */
-    .cta { padding: clamp(6rem, 10vw, 9rem) 0; background: var(--charcoal); text-align: center; color: #fff; }
-    .cta-quote { font-family: 'Libre Baskerville', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; line-height: 1.4; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
-    .cta-body { font-size: 1.05rem; line-height: 1.8; max-width: 640px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.6); }
-    .cta .btn--primary { font-size: 0.9rem; padding: 0.9rem 2.25rem; }
-    .cta-footer { margin-top: 6rem; font-family: 'DM Mono', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.12em; text-transform: uppercase; }
-
-    /* DESKTOP RESPONSIVE GRID ENGINE */
-    @media (min-width: 768px) {
-      .hero-grid { grid-template-columns: 1fr 1.1fr; gap: 3.5rem; }
-      .intro-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
-      .legs-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-      .scope-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
-      .quarter-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (min-width: 720px) {
+      .cards { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -155,175 +82,37 @@
 
   <nav>
     <div class="container">
-      <a href="#top" class="nav-logo">CAMP3 <span class="tri"><i></i><i></i><i></i></span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="#diagnostic">Approach</a>
-        <a href="#framework">Engagement</a>
-        <a href="#focus">Build</a>
-        <a href="#inquiry" class="nav-cta">GET IN TOUCH</a>
-      </div>
+      <a href="#" class="logo">CAMP3 <span class="tri"><i></i><i></i><i></i></span></a>
+      <a href="mailto:chris@reachcamp3.com" class="nav-cta">GET IN TOUCH</a>
     </div>
   </nav>
 
-  <section class="hero" id="top">
+  <main>
     <div class="container">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <div class="hero-label">CAMP3 &nbsp;·&nbsp; Revenue Operations for Independent Practice</div>
-          <h1>Revenue<br>Operations.</h1>
+      <div class="label">Architecture &amp; Design Practices</div>
+      <h1>Fractional Revenue Operations<br><span>&amp; Process Innovation.</span></h1>
+      <div class="cards">
+        <div class="card">
+          <div class="card-num">01</div>
+          <h2>Revenue Operations</h2>
+          <p>Pricing, pipeline, pursuit and reporting.</p>
         </div>
-        <div>
-          <p class="hero-sub">We help small architecture firms steady the business behind their best work. We find where margin is leaking and pursuit is misfiring, then install tuned tools that take minutes a week to operate. The result is more of the right work, without pulling principals out of the work of architecture.</p>
-          <div class="hero-ctas">
-            <a href="#inquiry" class="btn btn--primary">Start a conversation</a>
-            <a href="#framework" class="btn btn--outline">How the engagement works</a>
-          </div>
+        <div class="card">
+          <div class="card-num">02</div>
+          <h2>Process Innovation</h2>
+          <p>Workflows, tools and automation.</p>
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
-  <section class="intro" id="diagnostic">
-    <div class="container">
-      <div class="intro-grid">
-        <div class="intro-lead">
-          The right tools, tuned to how the practice already works, let a firm capture more of the right work <em>without adding overhead</em>, and without asking principals to step away from architecture.
-        </div>
-        <div class="intro-body">
-          <p>Traditional consulting tends to treat professional practices like interchangeable storefronts. Generic templates, ongoing retainers, prescriptive restructuring. We operate on a different premise: your project history, your workflows, and your day-to-day operations already contain the data needed to make the firm steadier.</p>
-          <p>We build the tracking and decision structures that connect leadership visibility to what's actually happening across studios. No new software licenses to manage. No heavy process overlay. Just the operating layer that lets your existing technical capacity run cleanly and predictably.</p>
-        </div>
-      </div>
+  <footer>
+    <div class="stripe"><i></i><i></i><i></i></div>
+    <div class="container foot">
+      <span>&copy; 2026 CAMP3</span>
+      <span>Revenue Operations · Process Innovation</span>
     </div>
-  </section>
-
-  <section class="legs">
-    <div class="container">
-      <div class="legs-header">
-        <div class="section-label">Focus Areas</div>
-        <h2 class="section-title">Where we focus.</h2>
-      </div>
-      <div class="legs-grid">
-        <div class="leg-block">
-          <div class="leg-meta"><span>01</span><span>Margin</span></div>
-          <div>
-            <h3 class="leg-title">Pricing what the work is actually worth.</h3>
-            <p class="leg-desc">Identifying which projects are genuinely profitable, and pricing the next proposal from real history rather than guesswork or benchmarks pulled from other firms.</p>
-          </div>
-          <div class="leg-definition">Holding margin discipline across project types and clients.</div>
-        </div>
-        <div class="leg-block">
-          <div class="leg-meta"><span>02</span><span>Productivity</span></div>
-          <div>
-            <h3 class="leg-title">Where the hours actually go.</h3>
-            <p class="leg-desc">Mapping time and capacity across phases, so teams aren't quietly overextended and hours aren't lost to handoffs, double-handling, or process gaps.</p>
-          </div>
-          <div class="leg-definition">Protecting capacity and execution stamina across the studio.</div>
-        </div>
-        <div class="leg-block">
-          <div class="leg-meta"><span>03</span><span>New Business</span></div>
-          <div>
-            <h3 class="leg-title">Chasing the right work, not all of it.</h3>
-            <p class="leg-desc">Building a disciplined intake and pursuit protocol calibrated to your real strengths and capacity, so the pipeline matches the firm you've become.</p>
-          </div>
-          <div class="leg-definition">Directing pursuit toward the work your firm is built to win.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="process" id="framework">
-    <div class="container">
-      <div class="section-label">The Engagement</div>
-      <h2 class="section-title">Three phases. Ninety days.</h2>
-      <div class="process-guarantee">Borrowed from how an expedition moves: read the route, do the time on trail, acclimate to the new altitude.</div>
-      <div class="process-steps">
-        <div class="step">
-          <div class="step-num">I</div>
-          <div class="step-week">Weeks 1–3 &nbsp;·&nbsp; What we find</div>
-          <h3>Route Planning</h3>
-          <p>We pull three years of project records, timesheets, fees, and signed contracts. The result is a written read of the firm: where margin is leaking, where pursuit is misfiring, where the systems carrying the business are quietly improvising. Quick wins flagged for the first thirty days.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">II</div>
-          <div class="step-week">Weeks 4–9 &nbsp;·&nbsp; What we build</div>
-          <h3>Time on Trail</h3>
-          <p>We install the tracking, fee models, dashboards, and pursuit tools the firm needs, inside the software your team already uses. Nothing new is licensed. Nothing new is bought. Each tool passes the minutes-a-week test before it ships.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">III</div>
-          <div class="step-week">Weeks 10–12 &nbsp;·&nbsp; What you keep</div>
-          <h3>Acclimatization</h3>
-          <p>The system goes live. We hold cadence with the principals through the first month of real use, calibrating against real data, then step away. The firm runs on systems your team operates in minutes a week, with a written operating manual and pursuit criteria set for the quarter ahead.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="scope">
-    <div class="container">
-      <h2 class="section-title">Scope of services.</h2>
-      <div class="scope-grid">
-        <div class="scope-col">
-          <h3>✓ Included</h3>
-          <ul class="scope-list">
-            <li>Project margin reads built from your historical timesheets, fees, and contracts</li>
-            <li>Lightweight reporting and dashboards inside Ajera, Vantagepoint, Monday, or your existing stack</li>
-            <li>Lead scoring, RFP tracking, and go/no-go pursuit frameworks calibrated to your firm</li>
-            <li>Fee modeling, billing projections, and pipeline reads tied to live accounting data</li>
-          </ul>
-        </div>
-        <div class="scope-col">
-          <h3>✕ Out of scope</h3>
-          <ul class="scope-list">
-            <li>HR, legal, IT, or insurance advisory</li>
-            <li>Marketing creative, brand strategy, or culture work</li>
-            <li>Software resale or platform lock-in of any kind</li>
-            <li>Consulting outside independent architecture and design practice</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sectors" id="focus">
-    <div class="container">
-      <div class="section-label">Phase 02 &nbsp;·&nbsp; The Build</div>
-      <h2 class="section-title">What gets built.</h2>
-      <div class="sector-tabs">
-        <div class="sector-tab">Tools & Metrics &nbsp;·&nbsp; Pipeline &nbsp;·&nbsp; BD Plan</div>
-      </div>
-      <div class="sector-panel active">
-        <p class="sector-friction">Tuned tools installed inside the software you already pay for. No new licenses, no new headcount, no operating overhead the firm has to absorb. The build is organized in three workstreams.</p>
-        <div class="quarter-grid">
-          <div class="quarter-card">
-            <h4><span>01</span>Tools & Metrics</h4>
-            <div class="quarter-item"><h5>Fee Model</h5><p>Calibrated to your project history, ready for the next proposal.</p></div>
-            <div class="quarter-item"><h5>Executive Dashboard</h5><p>Pipeline, utilization, and margin on one screen, built in Power BI or native to your stack.</p></div>
-          </div>
-          <div class="quarter-card">
-            <h4><span>02</span>Pipeline</h4>
-            <div class="quarter-item"><h5>Lead Scoring & Routing</h5><p>Inbound and sourced leads reach the right principal automatically; nothing goes cold in an inbox.</p></div>
-            <div class="quarter-item"><h5>Go/No-Go Framework</h5><p>Pursuit qualification calibrated to your firm's real win profile, not a generic scorecard.</p></div>
-          </div>
-          <div class="quarter-card">
-            <h4><span>03</span>BD Plan</h4>
-            <div class="quarter-item"><h5>Twelve-Month BD Plan</h5><p>Markets, clients, RFP sources, and outreach calendar, written and pressure-tested against your capacity.</p></div>
-            <div class="quarter-item"><h5>BD Tour Map</h5><p>Efficient client visit routing built from your real project history.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta" id="inquiry">
-    <div class="container">
-      <h2 class="cta-quote">More of the right work,<br><em>without leaving the studio.</em></h2>
-      <p class="cta-body">If your practice is leaking margin, missing pursuits, or running on systems someone holds in their head, we can help. Engagements begin with a Route Planning Memo. Yours to keep, whether we go further together or not.</p>
-      <a href="mailto:cdg786@gmail.com" class="btn btn--primary">Start a conversation</a>
-      <div class="cta-footer">CAMP3 &nbsp;·&nbsp; Revenue Operations &nbsp;·&nbsp; Independent Architecture Practice</div>
-    </div>
-  </section>
+  </footer>
 
 </body>
 </html>
